@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รถสวยบ้านสวนท่าทราย - รถยนต์มือสองคัดเกรด สมุทรสาคร</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Kanit', 'sans-serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            900: '#064e3b',
+                        },
+                        dark: {
+                            900: '#0a0d0b',
+                            950: '#040605',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-header {
+            background: rgba(10, 13, 11, 0.92);
+            backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(4,6,5,0.96) 0%, rgba(15,23,17,0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-emerald-900/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center text-dark-950 font-bold text-2xl shadow-lg shadow-emerald-500/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-bold tracking-tight text-white block leading-none">รถสวยบ้านสวนท่าทราย</span>
+                        <span class="text-xs text-emerald-400 font-light tracking-widest uppercase">สมุทรสาคร · รถบ้านคัดเกรดคุณภาพ</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#home" class="hover:text-emerald-400 transition-colors">หน้าแรก</a>
+                    <a href="#cars" class="hover:text-emerald-400 transition-colors">รายการรถทั้งหมด</a>
+                    <a href="#highlights" class="hover:text-emerald-400 transition-colors">จุดเด่นของเรา</a>
+                    <a href="#contact" class="hover:text-emerald-400 transition-colors">ติดต่อเรา / แผนที่</a>
+                </nav>
+
+                <!-- Phone CTA -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="tel:0980982598" class="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-dark-950 font-bold px-5 py-2.5 rounded-xl transition-all shadow-md shadow-emerald-500/20 hover:scale-105">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>098-098-2598</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button type="button" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-emerald-900/40 bg-dark-900 px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-emerald-950 hover:text-emerald-400">หน้าแรก</a>
+            <a href="#cars" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-emerald-950 hover:text-emerald-400">รายการรถทั้งหมด</a>
+            <a href="#highlights" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-emerald-950 hover:text-emerald-400">จุดเด่นของเรา</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-emerald-950 hover:text-emerald-400">ติดต่อเรา / แผนที่</a>
+            <a href="tel:0980982598" class="flex items-center justify-center gap-2 bg-emerald-500 text-dark-950 font-bold px-4 py-3 rounded-xl mt-4">
+                <i class="fa-solid fa-phone"></i>
+                <span>โทร 098-098-2598</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 hero-gradient overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-medium mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    เปิดบริการ 24 ชั่วโมง · ยินดีต้อนรับทุกท่าน
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+                    รถบ้านคัดเกรดคุณภาพ <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-200">รถสวยบ้านสวนท่าทราย</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 font-light mb-8 leading-relaxed">
+                    แหล่งรวมรถยนต์มือสองสภาพสวย รถบ้านแท้ มีให้ท่านเลือกชมมากมาย ท่าทราย เมืองสมุทรสาคร หากำลังหารถรุ่นไหนอยู่ เงื่อนไขแบบไหน ทักมาคุยสอบถามกันได้เลยครับ!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#cars" class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/25 hover:scale-105 text-lg">
+                        <i class="fa-solid fa-car-side"></i>
+                        <span>ดูรายการรถทั้งหมด</span>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-800/80 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 text-lg">
+                        <i class="fa-solid fa-comments"></i>
+                        <span>ติดต่อ / นัดดูรถ</span>
+                    </a>
+                </div>
+
+                <!-- Stats / Quick Info -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-12 pt-8 border-t border-emerald-900/40">
+                    <div>
+                        <p class="text-3xl font-bold text-emerald-400">100%</p>
+                        <p class="text-sm text-slate-400">รถบ้านคัดเกรดสภาพสวย</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-emerald-400">24/7</p>
+                        <p class="text-sm text-slate-400">เปิดบริการต้อนรับตลอด</p>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <p class="text-3xl font-bold text-emerald-400">สมุทรสาคร</p>
+                        <p class="text-sm text-slate-400">พิกัด ต.ท่าทราย เดินทางสะดวก</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter & Car Inventory Section -->
+    <section id="cars" class="py-20 bg-dark-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">รายการรถยนต์คัดเกรดพร้อมขาย</h2>
+                <p class="text-slate-400">เลือกรถที่ใช่ตามสไตล์คุณ เลือกรุ่นไหนทักสอบถามรายละเอียดเงื่อนไขจัดไฟแนนซ์ได้ทันที</p>
+                
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
+                    <button onclick="filterCars('all')" class="filter-btn active-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-emerald-500 text-dark-950 shadow-md">
+                        ทั้งหมด
+                    </button>
+                    <button onclick="filterCars('pickup')" class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-dark-900 text-slate-300 hover:bg-emerald-950 border border-emerald-900/30">
+                        <i class="fa-solid fa-truck-pickup mr-1"></i> รถกระบะ
+                    </button>
+                    <button onclick="filterCars('sedan')" class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-dark-900 text-slate-300 hover:bg-emerald-950 border border-emerald-900/30">
+                        <i class="fa-solid fa-car-rear mr-1"></i> รถเก๋ง / SUV
+                    </button>
+                    <button onclick="filterCars('van')" class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all bg-dark-900 text-slate-300 hover:bg-emerald-950 border border-emerald-900/30">
+                        <i class="fa-solid fa-van-shuttle mr-1"></i> รถตู้ / รถอเนกประสงค์
+                    </button>
+                </div>
+            </div>
+
+            <!-- Car Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="car-grid">
+                <!-- Car Item 1 -->
+                <div class="car-card pickup bg-dark-900 border border-emerald-900/40 rounded-2xl overflow-hidden hover:border-emerald-500/60 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559416523-140ddc322234?q=80&w=800&auto=format&fit=crop" alt="Isuzu D-Max" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x500/0a0d0b/10b981?text=รถสวยบ้านสวนท่าทราย'">
+                        <span class="absolute top-4 left-4 bg-emerald-500 text-dark-950 font-bold text-xs px-3 py-1 rounded-full shadow">
+                            รถบ้านคัดเกรด
+                        </span>
+                        <span class="absolute bottom-4 right-4 bg-dark-950/90 backdrop-blur text-white text-xs px-2.5 py-1 rounded-lg border border-emerald-900/40">
+                            ปี 2021
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Isuzu D-Max Cab-4 1.9 Ddi S</h3>
+                        <p class="text-emerald-400 font-bold text-2xl mb-4">549,000 <span class="text-sm font-normal text-slate-400">บาท</span></p>
+                        
+                        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-emerald-900/30 text-xs text-slate-300 mb-6">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gauge text-emerald-400"></i> 45,000 กม.</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gear text-emerald-400"></i> เกียร์ธรรมดา</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gas-pump text-emerald-400"></i> ดีเซล</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-shield text-emerald-400"></i> ไม่เคยชนหนัก</div>
+                        </div>
+
+                        <button onclick="openInquiryModal('Isuzu D-Max Cab-4 1.9 Ddi S')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>สนใจคันนี้ / สอบถาม</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Item 2 -->
+                <div class="car-card sedan bg-dark-900 border border-emerald-900/40 rounded-2xl overflow-hidden hover:border-emerald-500/60 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=800&auto=format&fit=crop" alt="Toyota Camry" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x500/0a0d0b/10b981?text=รถสวยบ้านสวนท่าทราย'">
+                        <span class="absolute top-4 left-4 bg-emerald-500 text-dark-950 font-bold text-xs px-3 py-1 rounded-full shadow">
+                            สภาพนางฟ้า
+                        </span>
+                        <span class="absolute bottom-4 right-4 bg-dark-950/90 backdrop-blur text-white text-xs px-2.5 py-1 rounded-lg border border-emerald-900/40">
+                            ปี 2020
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Toyota Camry 2.5 HV Premium</h3>
+                        <p class="text-emerald-400 font-bold text-2xl mb-4">889,000 <span class="text-sm font-normal text-slate-400">บาท</span></p>
+                        
+                        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-emerald-900/30 text-xs text-slate-300 mb-6">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gauge text-emerald-400"></i> 62,000 กม.</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gear text-emerald-400"></i> เกียร์ออโต้</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-bolt text-emerald-400"></i> เบนซิน+ไฮบริด</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-award text-emerald-400"></i> ประวัติเช็คศูนย์</div>
+                        </div>
+
+                        <button onclick="openInquiryModal('Toyota Camry 2.5 HV Premium')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>สนใจคันนี้ / สอบถาม</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Item 3 -->
+                <div class="car-card pickup bg-dark-900 border border-emerald-900/40 rounded-2xl overflow-hidden hover:border-emerald-500/60 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop" alt="Toyota Hilux Revo" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x500/0a0d0b/10b981?text=รถสวยบ้านสวนท่าทราย'">
+                        <span class="absolute top-4 left-4 bg-emerald-500 text-dark-950 font-bold text-xs px-3 py-1 rounded-full shadow">
+                            ยอดนิยม
+                        </span>
+                        <span class="absolute bottom-4 right-4 bg-dark-950/90 backdrop-blur text-white text-xs px-2.5 py-1 rounded-lg border border-emerald-900/40">
+                            ปี 2019
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Toyota Hilux Revo Smart Cab 2.4 E</h3>
+                        <p class="text-emerald-400 font-bold text-2xl mb-4">439,000 <span class="text-sm font-normal text-slate-400">บาท</span></p>
+                        
+                        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-emerald-900/30 text-xs text-slate-300 mb-6">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gauge text-emerald-400"></i> 78,000 กม.</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gear text-emerald-400"></i> เกียร์ธรรมดา</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gas-pump text-emerald-400"></i> ดีเซล</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-car text-emerald-400"></i> พร้อมโอน</div>
+                        </div>
+
+                        <button onclick="openInquiryModal('Toyota Hilux Revo Smart Cab 2.4 E')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>สนใจคันนี้ / สอบถาม</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Item 4 -->
+                <div class="car-card sedan bg-dark-900 border border-emerald-900/40 rounded-2xl overflow-hidden hover:border-emerald-500/60 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=800&auto=format&fit=crop" alt="Honda Civic" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x500/0a0d0b/10b981?text=รถสวยบ้านสวนท่าทราย'">
+                        <span class="absolute top-4 left-4 bg-emerald-500 text-dark-950 font-bold text-xs px-3 py-1 rounded-full shadow">
+                            แต่งสวยพร้อมใช้
+                        </span>
+                        <span class="absolute bottom-4 right-4 bg-dark-950/90 backdrop-blur text-white text-xs px-2.5 py-1 rounded-lg border border-emerald-900/40">
+                            ปี 2018
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Honda Civic FC 1.8 EL</h3>
+                        <p class="text-emerald-400 font-bold text-2xl mb-4">599,000 <span class="text-sm font-normal text-slate-400">บาท</span></p>
+                        
+                        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-emerald-900/30 text-xs text-slate-300 mb-6">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gauge text-emerald-400"></i> 82,000 กม.</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gear text-emerald-400"></i> เกียร์ออโต้</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gas-pump text-emerald-400"></i> เบนซิน</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-star text-emerald-400"></i> เบาะหนังแท้</div>
+                        </div>
+
+                        <button onclick="openInquiryModal('Honda Civic FC 1.8 EL')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>สนใจคันนี้ / สอบถาม</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Item 5 -->
+                <div class="car-card van bg-dark-900 border border-emerald-900/40 rounded-2xl overflow-hidden hover:border-emerald-500/60 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop" alt="Toyota Commuter" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x500/0a0d0b/10b981?text=รถสวยบ้านสวนท่าทราย'">
+                        <span class="absolute top-4 left-4 bg-emerald-500 text-dark-950 font-bold text-xs px-3 py-1 rounded-full shadow">
+                            รถตู้สวยจัด
+                        </span>
+                        <span class="absolute bottom-4 right-4 bg-dark-950/90 backdrop-blur text-white text-xs px-2.5 py-1 rounded-lg border border-emerald-900/40">
+                            ปี 2017
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Toyota Commuter 3.0 VIP 9 ที่นั่ง</h3>
+                        <p class="text-emerald-400 font-bold text-2xl mb-4">729,000 <span class="text-sm font-normal text-slate-400">บาท</span></p>
+                        
+                        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-emerald-900/30 text-xs text-slate-300 mb-6">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gauge text-emerald-400"></i> 110,000 กม.</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gear text-emerald-400"></i> เกียร์ธรรมดา</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-tv text-emerald-400"></i> แอร์ไมโครบัส/ทีวี</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-users text-emerald-400"></i> เบาะ VIP 9 ที่นั่ง</div>
+                        </div>
+
+                        <button onclick="openInquiryModal('Toyota Commuter 3.0 VIP')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>สนใจคันนี้ / สอบถาม</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Item 6 -->
+                <div class="car-card sedan bg-dark-900 border border-emerald-900/40 rounded-2xl overflow-hidden hover:border-emerald-500/60 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop" alt="Mazda 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x500/0a0d0b/10b981?text=รถสวยบ้านสวนท่าทราย'">
+                        <span class="absolute top-4 left-4 bg-emerald-500 text-dark-950 font-bold text-xs px-3 py-1 rounded-full shadow">
+                            ประหยัดน้ำมัน
+                        </span>
+                        <span class="absolute bottom-4 right-4 bg-dark-950/90 backdrop-blur text-white text-xs px-2.5 py-1 rounded-lg border border-emerald-900/40">
+                            ปี 2019
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Mazda 2 Hatchback 1.3 High Connect</h3>
+                        <p class="text-emerald-400 font-bold text-2xl mb-4">359,000 <span class="text-sm font-normal text-slate-400">บาท</span></p>
+                        
+                        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-emerald-900/30 text-xs text-slate-300 mb-6">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gauge text-emerald-400"></i> 55,000 กม.</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-gear text-emerald-400"></i> เกียร์ออโต้</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-leaf text-emerald-400"></i> Eco Car</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> พร้อมใช้งาน</div>
+                        </div>
+
+                        <button onclick="openInquiryModal('Mazda 2 Hatchback 1.3')" class="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>สนใจคันนี้ / สอบถาม</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Call to action for more cars -->
+            <div class="text-center mt-12 bg-dark-900 border border-emerald-900/40 rounded-2xl p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-white mb-3">หารถรุ่นไหนนอกเหนือจากนี้อยู่หรือไม่?</h3>
+                <p class="text-slate-400 mb-6">เรามีรถหมุนเวียนเข้ามาเรื่อยๆ ทักมาสอบถามหรือแจ้งรุ่นที่กำลังหาได้เลยครับ ทางร้านคอยดูแลให้ตลอด</p>
+                <a href="https://facebook.com" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-dark-950 font-bold px-6 py-3 rounded-xl transition-all">
+                    <i class="fa-brands fa-facebook"></i>
+                    <span>ทักข้อความเพจ Facebook</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Highlights -->
+    <section id="highlights" class="py-20 bg-dark-900 border-t border-b border-emerald-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">ทำไมต้องเลือก "รถสวยบ้านสวนท่าทราย"</h2>
+                <p class="text-slate-400">เราใส่ใจคัดสรรรถยนต์ทุกคันอย่างซื่อสัตย์ เพื่อให้ท่านได้รถคุณภาพดีไปใช้งาน</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-emerald-900/40 text-center hover:border-emerald-500/60 transition-colors">
+                    <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">
+                        <i class="fa-solid fa-car-on"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">รถบ้านแท้ คัดเกรด</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        คัดสรรเฉพาะรถบ้านสภาพสวย ประวัติชัดเจน ไม่สวมเล่ม ไม่มีชนหนัก พลิกคว่ำ หรือจมน้ำแน่นอน
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-emerald-900/40 text-center hover:border-emerald-500/60 transition-colors">
+                    <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">ตรวจเช็คก่อนส่งมอบ</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        ผ่านการตรวจเช็คสภาพเครื่องยนต์ ช่วงล่าง และระบบไฟฟ้า พร้อมทำความสะอาด สภาพพร้อมใช้งานทันที
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-emerald-900/40 text-center hover:border-emerald-500/60 transition-colors">
+                    <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">จัดไฟแนนซ์ง่าย</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        ยินดีให้คำปรึกษาทุกอาชีพ เงื่อนไขแบบไหนทักมาคุยกันได้ ดันให้ทุกเคส ซื้อได้ทุกจังหวัด
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-emerald-900/40 text-center hover:border-emerald-500/60 transition-colors">
+                    <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">เปิดบริการ 24 ชั่วโมง</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        ยินดีต้อนรับและให้คำปรึกษาตลอด 24 ชม. สะดวกเข้ามาดูรถวันไหน เวลาใด สามารถนัดหมายล่วงหน้าได้เลย
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-20 bg-dark-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-emerald-400 font-semibold tracking-wider text-sm uppercase">แวะมาดูรถก่อนได้</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">ติดต่อ รถสวยบ้านสวนท่าทราย</h2>
+                        <p class="text-slate-400">
+                            ตั้งอยู่ที่ ตำบลท่าทราย อำเภอเมืองสมุทรสาคร จังหวัดสมุทรสาคร ติดต่อสอบถามเส้นทางหรือข้อมูลรถยนต์เพิ่มเติมได้ทุกช่องทางครับ
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Phone Item -->
+                        <a href="tel:0980982598" class="flex items-center gap-4 p-4 rounded-xl bg-dark-900 border border-emerald-900/40 hover:border-emerald-500/60 transition-colors group">
+                            <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-dark-950 transition-colors">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">เบอร์โทรศัพท์สายด่วน</p>
+                                <p class="text-lg font-bold text-white">098-098-2598</p>
+                            </div>
+                        </a>
+
+                        <!-- Address Item -->
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-dark-900 border border-emerald-900/40">
+                            <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">ที่อยู่ / พิกัดร้าน</p>
+                                <p class="text-base font-semibold text-white">ท่าทราย H68W+V75 ตำบลท่าทราย อำเภอเมืองสมุทรสาคร สมุทรสาคร 74000</p>
+                            </div>
+                        </div>
+
+                        <!-- Hours Item -->
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-dark-900 border border-emerald-900/40">
+                            <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400">
+                                <i class="fa-solid fa-business-time text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">เวลาทำการ</p>
+                                <p class="text-base font-semibold text-emerald-400">เปิดบริการ 24 ชั่วโมง (ยินดีต้อนรับทุกวัน)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="tel:0980982598" class="flex-1 min-w-[160px] bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold py-3.5 px-6 rounded-xl text-center transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>โทรทันที</span>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="flex-1 min-w-[160px] bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold py-3.5 px-6 rounded-xl text-center transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-facebook"></i>
+                            <span>เพจ Facebook</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Card -->
+                <div class="bg-dark-900 p-4 rounded-3xl border border-emerald-900/40 shadow-xl">
+                    <div class="w-full h-80 sm:h-96 rounded-2xl overflow-hidden relative bg-slate-800">
+                        <!-- Simulated Embedded Map -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.882194519967!2d100.266!3d13.555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDMzJzE4LjAiTiAxMDDCsDE1JzU3LjYiRQ!5e0!3m2!1sth!2sth!4v1620000000000!5m2!1sth!2sth" 
+                            class="w-full h-full border-0 filter grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                        <div class="absolute bottom-4 left-4 right-4 bg-dark-950/95 backdrop-blur border border-emerald-900/40 p-4 rounded-xl flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-bold text-white">รถสวยบ้านสวนท่าทราย</p>
+                                <p class="text-xs text-slate-400">ต.ท่าทราย อ.เมืองสมุทรสาคร</p>
+                            </div>
+                            <a href="https://maps.google.com" target="_blank" class="bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold px-4 py-2 rounded-lg text-xs transition-colors">
+                                นำทาง Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-emerald-900/40 py-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-dark-950 font-bold text-xl">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <span class="text-lg font-bold text-white">รถสวยบ้านสวนท่าทราย</span>
+                </div>
+
+                <!-- Links -->
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-400">
+                    <a href="#home" class="hover:text-emerald-400 transition-colors">หน้าแรก</a>
+                    <a href="#cars" class="hover:text-emerald-400 transition-colors">รายการรถ</a>
+                    <a href="#highlights" class="hover:text-emerald-400 transition-colors">จุดเด่น</a>
+                    <a href="#contact" class="hover:text-emerald-400 transition-colors">ติดต่อเรา</a>
+                </div>
+
+                <!-- Copyright -->
+                <p class="text-xs text-slate-500 text-center md:text-right">
+                    © 2026 รถสวยบ้านสวนท่าทราย. สงวนลิขสิทธิ์ทุกประการ. <br/>
+                    ผู้ค้ารถยนต์มือสองคุณภาพ ตำบลท่าทราย จังหวัดสมุทรสาคร
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inquiry Modal Dialog -->
+    <div id="inquiry-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-dark-900 border border-emerald-900/60 rounded-2xl max-w-md w-full p-6 relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeInquiryModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white">สอบถามข้อมูลรถยนต์</h3>
+                <p class="text-emerald-400 font-semibold mt-1" id="modal-car-title">ชื่อรุ่นรถ</p>
+            </div>
+            
+            <p class="text-slate-300 text-sm text-center mb-6">
+                สนใจคันนี้ หรือต้องการสอบถามเรื่องการจัดไฟแนนซ์ ยอดผ่อน หรือนัดดูรถจริง ติดต่อเราได้ทันที:
+            </p>
+
+            <div class="space-y-3">
+                <a href="tel:0980982598" class="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-dark-950 font-bold rounded-xl transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>โทร 098-098-2598</span>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="w-full py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2 border border-slate-700">
+                    <i class="fa-brands fa-facebook-messenger"></i>
+                    <span>ส่งข้อความเพจ Facebook</span>
+                </a>
+            </div>
+
+            <button onclick="closeInquiryModal()" class="w-full mt-4 py-2.5 text-slate-400 hover:text-white text-sm">
+                ปิดหน้านี้
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Car filtering logic
+        function filterCars(category) {
+            const cards = document.querySelectorAll('.car-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button styles
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-500', 'text-dark-950', 'shadow-md');
+                btn.classList.add('bg-dark-900', 'text-slate-300');
+            });
+            event.currentTarget.classList.remove('bg-dark-900', 'text-slate-300');
+            event.currentTarget.classList.add('bg-emerald-500', 'text-dark-950', 'shadow-md');
+
+            // Show/Hide cards
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal Handlers
+        function openInquiryModal(carTitle) {
+            document.getElementById('modal-car-title').innerText = carTitle;
+            document.getElementById('inquiry-modal').classList.remove('hidden');
+        }
+
+        function closeInquiryModal() {
+            document.getElementById('inquiry-modal').classList.all ? document.getElementById('inquiry-modal').classList.add('hidden') : null;
+        }
+    </script>
+</body>
+</html>
